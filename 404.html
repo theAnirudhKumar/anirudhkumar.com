@@ -4,42 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.setAttribute('data-theme','dark');})();</script>
-<title>Page not found &mdash; Anirudh Kumar</title>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://anirudhkumar.com/">
-<meta property="og:title" content="Page not found — Anirudh Kumar">
-<meta property="og:description" content="Anirudh Kumar. Practical systems for building a career and a life you actually want.">
-<meta property="og:image" content="https://anirudhkumar.com/assets/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Page not found — Anirudh Kumar">
-<meta name="twitter:description" content="Anirudh Kumar. Practical systems for building a career and a life you actually want.">
-<meta name="twitter:image" content="https://anirudhkumar.com/assets/og-image.png">
+<title>Not found &mdash; Anirudh Kumar</title>
+<meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <a class="site-logo" href="/">Anirudh Kumar</a>
-    <div class="header-actions">
-      <button class="theme-toggle" aria-label="Switch to dark mode" type="button">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-    </div>
+
+<header class="masthead">
+  <div class="shell">
+    <a class="wordmark" href="/">Anirudh Kumar<span>.</span></a>
+    <nav aria-label="Sections">
+      <a href="/#work">Work</a>
+      <a href="/#record">Record</a>
+      <a href="/#writing">Writing</a>
+      <a href="/#contact">Contact</a>
+    </nav>
   </div>
 </header>
-<script src="/js/main.js"></script>
-<section class="section paper" style="text-align:center;">
-  <div class="container">
-    <div class="eyebrow">404</div>
-    <h1 class="display">That page moved or never existed.</h1>
-    <p class="body-l" style="color:var(--graphite);">Try the homepage instead.</p>
-    <a class="btn btn-primary" href="/">Back to home</a>
+
+<section class="hero">
+  <div class="shell">
+    <span class="eyebrow">404</span>
+    <h1 class="display">That page moved, or never <em>existed</em>.</h1>
+    <p class="lede">The site lives on one page now. Everything is back at the start.</p>
+    <div class="contact-line" style="margin-top:40px;">
+      <a class="link" href="/">Back to anirudhkumar.com &rarr;</a>
+    </div>
   </div>
 </section>
+
+<footer class="foot">
+  <div class="shell">
+    <span>&copy; <span id="yr"></span> Anirudh Kumar</span>
+    <span>Senior Customer Success Manager</span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="/js/main.js"></script>
 </body>
 </html>
