@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.setAttribute('data-theme','dark');})();</script>
+<script>(function(){var t=localStorage.getItem('theme')||'light';if(t!=='light'&&t!=='dark'&&t!=='system')t='light';var d=t==='dark'||(t==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.setAttribute('data-theme','dark');document.documentElement.setAttribute('data-theme-pref',t);})();</script>
 <title>Work &mdash; Anirudh Kumar</title>
 <meta name="description" content="Customer success for mid-market and enterprise SaaS. The record, the methodology and the numbers, across Humantic AI, Clueso and Attentive.ai.">
 <meta property="og:type" content="website">
@@ -17,10 +17,8 @@
 <link rel="apple-touch-icon" href="/assets/favicon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=202609060705">
 </head>
 <body>
 
@@ -35,7 +33,11 @@
       <a href="/work" class="is-active">Work</a>
       <a href="/writing">Writing</a>
       <a href="/#contact">Contact</a>
-      <button class="theme-btn" type="button" aria-label="Toggle colour theme">Theme</button>
+      <div class="theme-switch" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-set="light" aria-label="Light theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+        <button type="button" data-theme-set="dark" aria-label="Dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button type="button" data-theme-set="system" aria-label="Match system theme"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>
+      </div>
     </nav>
   </div>
 </header>
@@ -68,7 +70,7 @@
         <div>
           <h2>Making customer success predictable instead of accidental.</h2>
           <div class="body-text measure">
-            <p>At Humantic AI I own a mid-market and enterprise book. Since joining, production adoption is up 63% and one in ten accounts has expanded 1.5 to 2 times, quarter over quarter, because the onboarding, health-scoring and expansion playbooks now exist and the team runs on them.</p>
+            <p>At Humantic AI I own a mid-market and enterprise book. Since joining, production adoption is up 63% and key accounts have expanded 1.5 to 2 times, quarter over quarter, because the onboarding, health-scoring and expansion playbooks now exist and the team runs on them.</p>
             <p>Before that I did the same thing twice: at Clueso, standing up the CS function underneath a $1.2M ARR book, and at Attentive.ai, taking a 44% chunk of daily manual work out of the process for a US and Canada customer base.</p>
           </div>
           <div class="rows" style="margin-top:48px;">
@@ -99,7 +101,7 @@
           </div>
           <div class="figures" style="margin-top:56px;">
             <div class="figure"><span class="n">63%</span><p>Production adoption lift, Aug 2025 to date, current book.</p></div>
-            <div class="figure"><span class="n">1.5&ndash;2&times;</span><p>Expansion on one in ten accounts, every quarter since.</p></div>
+            <div class="figure"><span class="n">1.5&ndash;2&times;</span><p>Expansion in key accounts, every quarter.</p></div>
             <div class="figure"><span class="n">$1.2M</span><p>ARR book owned across a full customer base, with the CS infrastructure built underneath it.</p></div>
           </div>
         </div>
@@ -244,6 +246,6 @@
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v=202609060705"></script>
 </body>
 </html>

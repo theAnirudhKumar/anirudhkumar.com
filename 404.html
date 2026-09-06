@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.setAttribute('data-theme','dark');})();</script>
+<script>(function(){var t=localStorage.getItem('theme')||'light';if(t!=='light'&&t!=='dark'&&t!=='system')t='light';var d=t==='dark'||(t==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.setAttribute('data-theme','dark');document.documentElement.setAttribute('data-theme-pref',t);})();</script>
 <title>Not found &mdash; Anirudh Kumar</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=202609060705">
 </head>
 <body>
 
@@ -23,9 +21,9 @@
       <span class="wordmark">Anirudh Kumar<span>.</span></span>
     </a>
     <nav aria-label="Sections">
-      <a href="/#work">Work</a>
-      <a href="/#record">Record</a>
-      <a href="/#writing">Writing</a>
+      <a href="/">Home</a>
+      <a href="/work">Work</a>
+      <a href="/writing">Writing</a>
       <a href="/#contact">Contact</a>
     </nav>
   </div>
@@ -50,6 +48,6 @@
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v=202609060705"></script>
 </body>
 </html>
