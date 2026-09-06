@@ -18,7 +18,7 @@
   --measure:640px;
   --shell:1180px;
   --gutter:28px;
-  --step:clamp(72px,10vw,140px);
+  --step:clamp(61px,8.5vw,119px);
 
   --font-display:'Fraunces','Iowan Old Style',Georgia,serif;
   --font-text:'Inter',-apple-system,'Segoe UI',sans-serif;
