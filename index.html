@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=202609190423">
+<link rel="stylesheet" href="/css/style.css?v=202609242022">
 </head>
 <body>
 
@@ -49,17 +49,19 @@
 <main>
 
   <section class="hero">
+    <div class="bgring" aria-hidden="true"></div><div class="bgring two" aria-hidden="true"></div>
     <div class="shell">
       <div class="hero-grid">
         <div class="portrait">
           <svg class="blob" viewBox="0 0 400 400" aria-hidden="true">
             <path d="M318 62c48 38 78 106 62 168s-74 116-140 128-138-12-176-64S22 156 58 100 128 20 190 18s84 6 128 44z"/>
           </svg>
-          <img src="/assets/anirudh-cutout.png" alt="Anirudh Kumar" width="680" height="680" fetchpriority="high">
+          <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48"/></svg>
+          <div class="disc"><img src="/assets/anirudh-cutout.png" alt="Anirudh Kumar" width="680" height="680" fetchpriority="high"></div>
         </div>
         <div>
           <span class="eyebrow">Bengaluru, via Delhi</span>
-          <h1 class="display">Hey, I'm <span class="nowrap"><em>Anirudh</em> <span class="wave">&#x1F44B;</span></span></h1>
+          <h1 class="display">Hey, I'm <span class="nowrap"><span class="uline"><em>Anirudh</em><svg viewBox="0 0 90 11" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 C 22 2, 48 10, 88 4"/></svg></span> <span class="wave">&#x1F44B;</span></span><svg class="doodle squig" viewBox="0 0 64 40" aria-hidden="true"><path d="M3 30 C 10 6, 26 4, 30 18 S 44 34, 54 12"/><path d="M47 10 l8 1 -1 8"/></svg></h1>
           <p class="lede">Fixing the broken, building to scale, and making success predictable. So far that has meant founding a company at 20, running regional public-speaking clubs, standing up customer success at three SaaS companies, building a community of CSMs, and writing two newsletters while learning how things are usually done.</p>
           <p class="lede" style="margin-top:16px;">Currently a Senior Customer Success Account Manager.<br>Chronically unable to leave a broken process alone.</p>
           <div class="hero-meta">
@@ -223,6 +225,7 @@
         <div>
           <h2 class="display">Building something with no playbook yet?</h2>
           <p class="lede" style="margin-top:20px; max-width:40ch;">I'd like to hear about it. Email is fastest.</p>
+          <svg class="doodle carrow" viewBox="0 0 70 60" aria-hidden="true"><path d="M60 4 C 66 26, 44 44, 10 50"/><path d="M18 43 l-9 7 9 6"/></svg>
           <div class="contact-line">
             <a class="link" href="mailto:hello@anirudhkumar.com">hello@anirudhkumar.com</a>
             <a class="link" href="https://anirudhk.com/linkedin" target="_blank" rel="noopener">LinkedIn &rarr;</a>
@@ -251,6 +254,6 @@
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-<script src="/js/main.js?v=202609190423"></script>
+<script src="/js/main.js?v=202609242022"></script>
 </body>
 </html>
