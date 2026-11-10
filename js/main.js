@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var dark = pref === 'dark' || (pref === 'system' && mq.matches);
     if (dark) root.setAttribute('data-theme', 'dark'); else root.removeAttribute('data-theme');
     root.setAttribute('data-theme-pref', pref);
+    var tc = document.querySelector('meta[name="theme-color"]');
+    if (tc) tc.setAttribute('content', dark ? '#14110D' : (window.matchMedia('(min-width: 761px)').matches ? '#F4EEE3' : '#FCF9F4'));
     buttons.forEach(function (b) { b.classList.toggle('is-on', b.getAttribute('data-theme-set') === pref); });
     if (cycle) {
       cycle.setAttribute('data-pref', pref);
