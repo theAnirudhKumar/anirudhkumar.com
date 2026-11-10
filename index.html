@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=202609242105">
+<link rel="stylesheet" href="/css/style.css?v=202611110114">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
       <img src="/assets/mark-64.png" alt="" width="36" height="36">
       <span class="wordmark">Anirudh Kumar<span>.</span></span>
     </a>
-    <nav aria-label="Sections">
+    <nav id="site-nav" aria-label="Sections">
       <a href="#threads">Threads</a>
       <a href="#work">Work</a>
       <a href="#writing">Writing</a>
@@ -42,7 +42,7 @@
         <button type="button" data-theme-set="dark" aria-label="Dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
         <button type="button" data-theme-set="system" aria-label="Match system theme"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>
       </div>
-    </nav>
+    </nav><button type="button" class="theme-cycle" aria-label="Theme: Light. Tap for Dark." data-pref="light"><svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button><button type="button" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><i></i><i></i><i></i></button>
   </div>
 </header>
 
@@ -92,10 +92,10 @@
         <div>
           <h2>Four threads, one habit.</h2>
           <ul class="now-list measure">
-            <li>Systems. Every role so far has started with a book of accounts and no operating layer under it. Building that layer is the part that never gets old.</li>
-            <li>Community. Toastmasters at twenty, CS Pulse Community now. Small rooms where CSMs fix real mistakes.</li>
-            <li>Writing. Two newsletters: one on the craft of customer success, one on tools that let non-technical people work like technical ones.</li>
-            <li>Building. AI skills on GitHub.
+            <li><b>Systems.</b> Every role so far has started with a book of accounts and no operating layer under it. Building that layer is the part that never gets old.</li>
+            <li><b>Community.</b> Toastmasters at twenty, CS Pulse Community now. Small rooms where CSMs fix real mistakes.</li>
+            <li><b>Writing.</b> Two newsletters: one on the craft of customer success, one on tools that let non-technical people work like technical ones.</li>
+            <li><b>Building.</b> AI skills on GitHub.
               <ul class="sub-list">
                 <li><a class="link" href="https://github.com/CSPulse/customer-success-skills" target="_blank" rel="noopener">Customer Success Skills</a>: thirty-two skills covering the whole of the job, from reading an account to leading the function.</li>
                 <li><a class="link" href="https://github.com/theAnirudhKumar/CoworkOS" target="_blank" rel="noopener">Cowork OS</a>: your AI second brain. It remembers your work, your goals, and your decisions, so every AI chat starts already knowing you. It captures thoughts from your phone, plans your week around your calendar, and tidies itself every week. It works with Claude, ChatGPT, and other AI tools.</li>
@@ -197,11 +197,11 @@
         <div>
           <h2>How I work, in one word: FOCAS.</h2>
           <ol class="principles">
-            <li><span>Fast is not the same as rushed.</span> Rushed skips the thinking and pays for it later. Fast did the thinking first.</li>
-            <li><span>Output over activity.</span> Busy is not a result.</li>
-            <li><span>Clarity beats intelligence.</span> The smartest idea in the room loses to the one everyone can repeat.</li>
-            <li><span>Adoption is the only metric.</span> Everything else is a proxy for whether people actually use the thing.</li>
-            <li><span>Systems scale. People don't.</span> If it depends on someone remembering, it's already broken.</li>
+            <li data-k="F"><span>Fast is not the same as rushed.</span> Rushed skips the thinking and pays for it later. Fast did the thinking first.</li>
+            <li data-k="O"><span>Output over activity.</span> Busy is not a result.</li>
+            <li data-k="C"><span>Clarity beats intelligence.</span> The smartest idea in the room loses to the one everyone can repeat.</li>
+            <li data-k="A"><span>Adoption is the only metric.</span> Everything else is a proxy for whether people actually use the thing.</li>
+            <li data-k="S"><span>Systems scale. People don't.</span> If it depends on someone remembering, it's already broken.</li>
           </ol>
         </div>
       </div>
@@ -260,7 +260,9 @@
   </div>
 </footer>
 
+<nav class="tabbar" aria-label="Primary"><a href="/" data-tab="home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a><a href="/work" data-tab="work"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg><span>Work</span></a><a href="/writing" data-tab="writing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg><span>Writing</span></a><a href="/#community" data-tab="community"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.2c.6-.2 1.2-.2 1.9-.2 2.4 0 4.1 1.8 4.1 4.3"/></svg><span>Community</span></a><a href="/#contact" data-tab="contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact</span></a></nav>
+
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-<script src="/js/main.js?v=202609242105"></script>
+<script src="/js/main.js?v=202611110114"></script>
 </body>
 </html>
