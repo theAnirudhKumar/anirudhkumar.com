@@ -11,12 +11,31 @@ document.addEventListener('DOMContentLoaded', function () {
   var order = { light: 'dark', dark: 'system', system: 'light' };
   var names = { light: 'Light', dark: 'Dark', system: 'System' };
 
+  // Safari reads the bar colour once and ignores edits to the existing tag, so the tag is replaced,
+  // the colour scheme is set directly, and a one-pixel scroll nudge makes it sample the bars again.
+  var firstBar = true;
+  function setBarColour(dark) {
+    var colour = dark ? '#14110D' : (window.matchMedia('(min-width: 761px)').matches ? '#F4EEE3' : '#FCF9F4');
+    root.style.colorScheme = dark ? 'dark' : 'light';
+    var old = document.querySelector('meta[name="theme-color"]');
+    if (old && old.getAttribute('content') === colour && firstBar) { firstBar = false; return; }
+    firstBar = false;
+    var tag = document.createElement('meta');
+    tag.setAttribute('name', 'theme-color');
+    tag.setAttribute('content', colour);
+    if (old) old.parentNode.replaceChild(tag, old); else document.head.appendChild(tag);
+    var y = window.pageYOffset;
+    window.requestAnimationFrame(function () {
+      window.scrollTo({ top: y + 1, behavior: 'instant' });
+      window.scrollTo({ top: y, behavior: 'instant' });
+    });
+  }
+
   function apply(pref) {
     var dark = pref === 'dark' || (pref === 'system' && mq.matches);
     if (dark) root.setAttribute('data-theme', 'dark'); else root.removeAttribute('data-theme');
     root.setAttribute('data-theme-pref', pref);
-    var tc = document.querySelector('meta[name="theme-color"]');
-    if (tc) tc.setAttribute('content', dark ? '#14110D' : (window.matchMedia('(min-width: 761px)').matches ? '#F4EEE3' : '#FCF9F4'));
+    setBarColour(dark);
     buttons.forEach(function (b) { b.classList.toggle('is-on', b.getAttribute('data-theme-set') === pref); });
     if (cycle) {
       cycle.setAttribute('data-pref', pref);
