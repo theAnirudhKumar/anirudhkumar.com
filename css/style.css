@@ -290,7 +290,10 @@ p{margin:0 0 1.15em;}
   :root{--step:52px;}
   body{padding-bottom:84px;}
 
-  /* Header: brand, theme button, menu button. The nav becomes the dropdown. */
+  /* Header: brand, theme button, menu button. The nav becomes the dropdown.
+     Solid and unblurred on phones: Safari takes its bar colour from the page background or an opaque
+     fixed top and bottom element, and skips one that has a blur on it. */
+  .masthead{background:var(--paper); -webkit-backdrop-filter:none; backdrop-filter:none;}
   .masthead .shell{gap:10px; padding-top:12px; padding-bottom:12px;}
   .brand img{width:34px; height:34px;}
   .wordmark{display:block; font-size:20px;}
@@ -325,8 +328,7 @@ p{margin:0 0 1.15em;}
   /* Bottom tab bar */
   .tabbar{
     display:flex; justify-content:space-around; position:fixed; left:0; right:0; bottom:0; z-index:70;
-    background:color-mix(in srgb, var(--bone) 94%, transparent); backdrop-filter:blur(14px);
-    border-top:1px solid var(--rule); padding:9px 4px calc(10px + env(safe-area-inset-bottom));
+    background:var(--paper); border-top:1px solid var(--rule); padding:9px 4px calc(10px + env(safe-area-inset-bottom));
   }
   .tabbar a{display:flex; flex-direction:column; align-items:center; gap:4px; min-width:58px; color:var(--slate);}
   .tabbar a span{font:500 9.5px var(--font-mono); letter-spacing:0.05em; text-transform:uppercase;}
